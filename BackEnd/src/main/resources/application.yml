@@ -1,0 +1,13 @@
+
+
+spring:
+  datasource:
+    username: root
+    password: 118922
+    url: jdbc:mysql://localhost:3306/hhuc?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+
+
