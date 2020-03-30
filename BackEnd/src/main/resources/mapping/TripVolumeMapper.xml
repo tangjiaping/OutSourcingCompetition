@@ -5,6 +5,10 @@
         select area,count(*) as `value` from stayinfo group by area order by count(*) desc;
     </select>
 
+    <select id="getTopNAreaTripVolumes" resultType="cn.hhuc.bean.TripVolume" parameterType="int">
+        select area,count(*) as `value` from stayinfo group by area order by count(*) desc limit #{n};
+    </select>
+
     <select id="getAreaTripVolumeByArea" parameterType="java.lang.String" resultType="cn.hhuc.bean.TripVolume">
         select area,count(*) as `value` from stayinfo where area=#{area};
     </select>

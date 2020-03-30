@@ -1,6 +1,8 @@
 package cn.hhuc.bean;
 
 
+import java.util.Objects;
+
 public class HeatMapData {
     private float lng;
     private float lat;
@@ -39,8 +41,21 @@ public class HeatMapData {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof HeatMapData)) return false;
+        HeatMapData that = (HeatMapData) o;
+        return Float.compare(that.lng, lng) == 0 && Float.compare(that.lat, lat) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(lng, lat);
+    }
+
+    @Override
     public String toString() {
-        return "lng:" + lng + ",\nlat:" + lat + ",\ncount:" + count;
+        return "lng:" + lng + ",lat:" + lat + ",count:" + count;
     }
 
     public static void main(String[] args) {

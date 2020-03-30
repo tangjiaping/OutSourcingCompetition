@@ -5,6 +5,10 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import java.util.Arrays;
 import java.util.Properties;
 
+
+/**
+ * 该类是一个工具类，用来提供kafka消费者的配置信息
+ */
 public class KafkaConsumerUtil {
 
     public static KafkaConsumer getKafkaConsumer(String server,String topic){

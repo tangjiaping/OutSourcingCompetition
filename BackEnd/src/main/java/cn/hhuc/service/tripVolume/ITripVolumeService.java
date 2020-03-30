@@ -1,14 +1,12 @@
-package cn.hhuc.mapper;
+package cn.hhuc.service.tripVolume;
 
 import cn.hhuc.bean.TripVolume;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Mapper
-@Repository
-public interface ITripVolume {
+@Service
+public interface ITripVolumeService {
     public List<TripVolume> getAreaTripVolumes();
     public List<TripVolume> getTopNAreaTripVolumes(int n);
     public TripVolume getAreaTripVolumeByArea(String area);
