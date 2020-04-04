@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hhuc.mapper.ICrossRegionMapper">
+    <select id="getCrossRegionVolumes" resultType="cn.hhuc.bean.CrossRegionVolume">
+        select startArea,endArea,count(*) as volume from travelmodelv1 group by startArea, endArea;
+    </select>
+
+    <select id="getCrossRegionVolumesByArea" parameterType="java.lang.String" resultType="cn.hhuc.bean.CrossRegionVolume">
+        select startArea,endArea,count(*) as volume from travelmodelv1 where startArea=#{area} group by startArea, endArea;
+    </select>
+</mapper>
