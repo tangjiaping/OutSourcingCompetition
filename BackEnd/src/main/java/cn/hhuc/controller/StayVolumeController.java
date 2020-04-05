@@ -29,7 +29,7 @@ public class StayVolumeController {
     }
 
     /**
-     * 获得Topn的出行量数据
+     * 获得Topn的驻留量数据
      * @param n
      * @return
      */
@@ -40,7 +40,7 @@ public class StayVolumeController {
     }
 
     /**
-     * 通过区获得区的出行量数据
+     * 通过区获得区的驻留量数据
      * @param area
      * @return
      */
