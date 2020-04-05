@@ -1,7 +1,7 @@
 package cn.hhuc.controller;
 
-import cn.hhuc.bean.TripVolume;
-import cn.hhuc.mapper.ITripVolume;
+import cn.hhuc.bean.StayVolume;
+import cn.hhuc.mapper.IStayVolume;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.drafts.Draft_6455;
 import org.java_websocket.handshake.ServerHandshake;
@@ -28,12 +28,12 @@ import java.util.Objects;
 @RestController
 public class Test {
     @Autowired
-    private ITripVolume tripVolume;
+    private IStayVolume StayVolume;
 
-    @RequestMapping("/tripVolume")
-    public List<TripVolume> testTripVolume(){
-        System.out.println("请求tripVolume");
-        return tripVolume.getAreaTripVolumes();
+    @RequestMapping("/StayVolume")
+    public List<StayVolume> testStayVolume(){
+        System.out.println("请求StayVolume");
+        return StayVolume.getAreaStayVolumes();
     }
 
     @Autowired

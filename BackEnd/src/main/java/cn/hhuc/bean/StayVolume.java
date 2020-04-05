@@ -1,12 +1,12 @@
 package cn.hhuc.bean;
 
-public class TripVolume {
+public class StayVolume {
     private String area;
     private int value;
 
-    public TripVolume(){}
+    public StayVolume(){}
 
-    public TripVolume(String area, int value) {
+    public StayVolume(String area, int value) {
         this.area = area;
         this.value = value;
     }
@@ -29,6 +29,6 @@ public class TripVolume {
 
     @Override
     public String toString() {
-        return "TripVolume{" + "area='" + area + '\'' + ", value=" + value + '}';
+        return "StayVolume{" + "area='" + area + '\'' + ", value=" + value + '}';
     }
 }

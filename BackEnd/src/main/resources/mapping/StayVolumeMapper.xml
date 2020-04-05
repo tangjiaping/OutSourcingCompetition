@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.hhuc.mapper.ITripVolume">
-    <select id="getAreaTripVolumes" resultType="cn.hhuc.bean.TripVolume">
+<mapper namespace="cn.hhuc.mapper.IStayVolume">
+    <select id="getAreaStayVolumes" resultType="cn.hhuc.bean.StayVolume">
         select area,count(*) as `value` from stayinfo group by area order by count(*) desc;
     </select>
 
-    <select id="getTopNAreaTripVolumes" resultType="cn.hhuc.bean.TripVolume" parameterType="int">
+    <select id="getTopNAreaStayVolumes" resultType="cn.hhuc.bean.StayVolume" parameterType="int">
         select area,count(*) as `value` from stayinfo group by area order by count(*) desc limit #{n};
     </select>
 
-    <select id="getAreaTripVolumeByArea" parameterType="java.lang.String" resultType="cn.hhuc.bean.TripVolume">
+    <select id="getAreaStayVolumeByArea" parameterType="java.lang.String" resultType="cn.hhuc.bean.StayVolume">
         select area,count(*) as `value` from stayinfo where area=#{area};
     </select>
 
