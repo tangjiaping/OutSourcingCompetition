@@ -19,11 +19,11 @@ public class StayVolume {
         this.area = area;
     }
 
-    public int getvalue() {
+    public int getValue() {
         return value;
     }
 
-    public void setvalue(int value) {
+    public void setValue(int value) {
         this.value = value;
     }
 
