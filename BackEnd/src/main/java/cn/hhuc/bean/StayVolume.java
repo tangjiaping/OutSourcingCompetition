@@ -1,22 +1,22 @@
 package cn.hhuc.bean;
 
 public class StayVolume {
-    private String area;
+    private String name;
     private int value;
 
     public StayVolume(){}
 
-    public StayVolume(String area, int value) {
-        this.area = area;
+    public StayVolume(String name, int value) {
+        this.name = name;
         this.value = value;
     }
 
-    public String getArea() {
-        return area;
+    public String getName() {
+        return name;
     }
 
-    public void setArea(String area) {
-        this.area = area;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getValue() {
@@ -29,6 +29,6 @@ public class StayVolume {
 
     @Override
     public String toString() {
-        return "StayVolume{" + "area='" + area + '\'' + ", value=" + value + '}';
+        return "StayVolume{" + "name='" + name + '\'' + ", value=" + value + '}';
     }
 }

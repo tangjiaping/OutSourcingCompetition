@@ -10,6 +10,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @MapperScan("cn.hhuc.mapper")
 @ComponentScan("cn.hhuc")
 @SpringBootApplication
+
+
 public class BackEndApplication {
 
     public static void main(String[] args) {
