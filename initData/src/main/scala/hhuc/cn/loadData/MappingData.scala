@@ -4,8 +4,9 @@ import java.text.SimpleDateFormat
 import java.util
 
 import org.apache.derby.iapi.util.StringUtil
+import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.catalyst.util.StringUtils
-import org.apache.spark.sql.{DataFrame, Row, SparkSession}
+import org.apache.spark.sql.{DataFrame, Row, SQLContext, SparkSession}
 
 import scala.collection.mutable.ListBuffer
 
@@ -41,11 +42,12 @@ object MappingData {
 class MappingData(database:String = "cleardata"){
   // 创建sparkSQL环境
   private val sparkSession: SparkSession = SparkSession.builder()
-    .master("local[*]")
+    .master("local[1]")
     .appName("mappingData")
-    .config("hive.metastore.uris", "thrift://192.168.2.120:9083") // 设置hive元数据的路径
+    .config("hive.metastore.uris", "thrift://47.103.136.112:9083") // 设置hive元数据的路径
     .enableHiveSupport() // 提供hive支持
     .getOrCreate()
+
   // 设置日志级别
   sparkSession.sparkContext.setLogLevel("ERROR")
   // 设置时间展示格式
@@ -61,10 +63,12 @@ class MappingData(database:String = "cleardata"){
    */
   private def init(database:String) :Unit = {
     // 设置SQL语句
+    sparkSession.sql("show databases").show()
     val sql = "use " + database
     // 执行SQL语句
     sparkSession.sql(sql)
     sparkSession.sql("show tables").show()
+//    sparkSession.sql("select * from test where num = 2").show()
   }
 
   /**
@@ -78,16 +82,21 @@ class MappingData(database:String = "cleardata"){
     array = new util.ArrayList[String]()
     // 提取当前时间的时分秒，然后根据主办方提供的数据时间构造时间
     val time: String = 20181003 + dateFormat.format(currentTime)
-    // val time = "20181003225328"
-    println(time)
+//     val time = "20181003225328"
     // 将SQL语句和时间拼接
-    val SQL = sql + time
+//    var SQL = sql + "20181003225328"
+    println("============================================")
+    var SQL = "select * from initdata where time = " + time
+    println(SQL)
     // 执行SQL语句
     val initDataFrame: DataFrame = sparkSession.sql(SQL)
+    println("finish")
     // 判断原始数据中是否存在当前时刻的数据，没有即直接返回，有就通过lac_id和cell_id查询stationdata中的经纬度
-    if (initDataFrame.collect().isEmpty){
+    if (initDataFrame.collect().isEmpty){  //initDataFrame.collect().isEmpty
+      println("no data")
       return null
     }else{
+      println("find data")
       // 初始化结果为空串
       var res = ""
       // 获取initdata中的time\imsi\lac_id\cell_id字段
@@ -108,11 +117,13 @@ class MappingData(database:String = "cleardata"){
         stationDataFrame.select("lng","lat").collect().foreach(row => {
           // 结果构建
           res = res + row.get(0) + " " + row.get(1)
+//          println(res)
         })
         // 将同一时刻的结果放入ArrayList中
         array.add(res)
       }
-//      println(array)
+      println(array)
+//      println("============================================")
       // 返回同一时刻的查询信息
       return array
     }

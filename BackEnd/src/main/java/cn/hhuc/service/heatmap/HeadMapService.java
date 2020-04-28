@@ -33,7 +33,7 @@ public class HeadMapService implements IHeadMap {
     @Test
     public void monitorDensity() {
         log.info("enter");
-        KafkaConsumer kafkaConsumer = KafkaConsumerUtil.getKafkaConsumer("192.168.2.120:9092", "tjp");
+        KafkaConsumer kafkaConsumer = KafkaConsumerUtil.getKafkaConsumer("122.51.19.184:9092", "tjp");
         DataFromCluster cluster = new DataFromCluster();
         /**
          * 数据切分和封装
@@ -45,6 +45,9 @@ public class HeadMapService implements IHeadMap {
                     ConsumerRecord record = (ConsumerRecord)dataIterator.next();
                     String res = (String) record.value();
                     log.info("lng lat count: " + res);
+                    System.out.println("==============================");
+                    System.out.println(res);
+                    System.out.println("================================");
                     String[] strings = res.split(" ");
                 try {
                     HeatMapData heatMapData = new HeatMapData(Float.parseFloat(strings[0]), Float.parseFloat(strings[1]), Integer.parseInt(strings[2]));

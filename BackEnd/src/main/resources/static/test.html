@@ -29,6 +29,18 @@
   //gateway网关的地址
   // var host="http://localhost:8080";
   var host="http://122.51.19.160:8080";
+  var socket = new SockJS(host+'/hhuc');
+  stompClient = Stomp.over(socket);
+  stompClient.connect({},function (frame) {
+    console.log(frame);
+    stompClient.subscribe("/user/map/heatmap",function (response) {
+      console.log("--------------")
+      console.log(response.body);
+      console.log("--------------")
+    })
+  });
+
+
   function setConnected(connected) {
     document.getElementById('connect').disabled = connected;
     document.getElementById('disconnect').disabled = !connected;

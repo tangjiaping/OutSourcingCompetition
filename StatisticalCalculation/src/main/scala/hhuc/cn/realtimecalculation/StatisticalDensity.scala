@@ -11,7 +11,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 object StatisticalDensity{
   def main(args: Array[String]): Unit = {
-    val conf: SparkConf = new SparkConf().setAppName("statisticalDensity").setMaster("local[*]")
+    val conf: SparkConf = new SparkConf().setAppName("statisticalDensity").setMaster("local[1]")
     val context = new SparkContext(conf)
     context.setLogLevel("ERROR")
 
@@ -23,7 +23,8 @@ object StatisticalDensity{
     val streamingContext: StreamingContext = statisticalDensity.streamingContext
 
     // 调用StatisticalDensity对象的创建输出流方法
-    val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("192.168.2.121:2181", "TJP", "initdata", 1)
+    val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("39.107.46.146:2181", "TJP", "hhuc", 1)
+//    val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("122.51.19.184:2181", "TJP", "initdata", 1)
 //    val stream: ReceiverInputDStream[(String, String)] = KafkaUtils.createStream(streamingContext, "192.168.2.121:2181", "TJPgroup", Map("initdata" -> 2))
 
     // 实时计算

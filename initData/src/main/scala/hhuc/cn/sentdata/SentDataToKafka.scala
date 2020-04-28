@@ -12,9 +12,9 @@ object SentDataToKafka {
   def main(args: Array[String]): Unit = {
     // 构造kafka配置文件信息
     val prop = new Properties()
-    prop.put("bootstrap.servers", "192.168.2.121:9092")
+    prop.put("bootstrap.servers", "39.107.46.146:9092")  //39.107.46.146
     prop.put("acks", "1")
-    prop.put("retries", "3")
+    prop.put("retries", "2")
     prop.put("key.serializer",
       "org.apache.kafka.common.serialization.StringSerializer")
     prop.put("value.serializer",
@@ -33,14 +33,18 @@ object SentDataToKafka {
       val currentTime: Long = System.currentTimeMillis()
       // 截取时间戳的时分秒
       val time: String = dateFormat.format(currentTime)
+//      println(time)
       // 调用MappingData中的loadDatasToIterator()方法，传入要操作的表和当前时间
       val iterator: util.Iterator[String] = mappingData.loadDatasToIterator("initdata", currentTime)
       // 遍历结果
       while (iterator != null && iterator.hasNext){
         // 获取要发送的message
         val message: String = iterator.next()
+        println( "********** " + message + " ************")
+        println("============================================")
         // 调用生产者的方法发送信息
-        dataToKafkaProducer.sendData("initdata",message)
+        dataToKafkaProducer.sendData("cluster",message)  // tjp
+//        dataToKafkaProducer.sendData("hhuc",message)
       }
       // 发送信息后判断当前时间是否和信息发送前得到的时间相等，如果相等则为同一时刻，进入循环阻塞。否则为下一秒，继续执行查询语句
       while (dateFormat.format(System.currentTimeMillis()) == time){}
@@ -56,7 +60,7 @@ object SentDataToKafka {
 class SentDataToKafka(kafkaProp:Properties) {
   private val prop = kafkaProp
   private val producer:KafkaProducer[String, String] = new KafkaProducer[String, String](prop)
-
+  println(producer)
   /**
    * 发送信息方法
    * @param topic 要发送到的主题

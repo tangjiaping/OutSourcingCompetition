@@ -7,7 +7,7 @@
 
 		<name>javax.jdo.option.ConnectionURL</name>
 	
-		<value>jdbc:mysql://192.168.2.120:3306/hive?createDatabaseIfNotExist=true</value>
+		<value>jdbc:mysql://47.103.136.112:3306/hive?createDatabaseIfNotExist=true</value>
 
 	</property>
 
@@ -37,7 +37,7 @@
 
 	<property>
 		<name>hive.metastore.uris</name>
-		<value>thrift://192.168.2.120:9083</value>
+		<value>thrift://47.103.136.112:9083</value>
 		<description>Thrift URI for the remote metastore. Used by metastore client to connect to remote metastore.</description>
 	</property>
 	

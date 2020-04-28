@@ -11,7 +11,7 @@ object KafkaProducerUtil {
 
   // 编写kafka配置文件
   val prop = new Properties()
-  prop.put("bootstrap.servers", "192.168.2.120:9092")
+  prop.put("bootstrap.servers", "122.51.19.184:9092")
   prop.put("acks", "1")
   prop.put("retries", "3")
   prop.put("key.serializer",
