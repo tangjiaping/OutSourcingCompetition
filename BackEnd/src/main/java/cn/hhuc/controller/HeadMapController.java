@@ -27,7 +27,6 @@ public class HeadMapController {
      */
     @Scheduled(fixedRate = 5000)
     public void sendHeadMapDataToFront(){
-        logger.info("发送热力图数据");
         webSocketService.sendHeadMapData("map","/heatmap");
     }
 }

@@ -14,9 +14,10 @@ public class KafkaConsumerUtil {
     public static KafkaConsumer getKafkaConsumer(String server,String topic){
         Properties properties = new Properties();
         properties.put("bootstrap.servers",server);
-        properties.put("group.id","headmap");
+//        properties.put("group.id","tencent");
+        properties.put("group.id","local");
         properties.put("auto.offset.reset","latest");
-        properties.put("auto.commit.interval.ms","10000");
+        properties.put("auto.commit.interval.ms","1000");
         properties.put("session.timeout.ms","30000");
         properties.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         properties.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");

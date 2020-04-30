@@ -1,5 +1,6 @@
 package hhuc.cn.realtimecalculation
 
+import java.util
 import java.util.Properties
 
 import hhuc.cn.senddatautil.KafkaProducerUtil
@@ -9,9 +10,11 @@ import org.apache.spark.streaming.kafka.KafkaUtils
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.{SparkConf, SparkContext}
 
+
+
 object StatisticalDensity{
   def main(args: Array[String]): Unit = {
-    val conf: SparkConf = new SparkConf().setAppName("statisticalDensity").setMaster("local[1]")
+    val conf: SparkConf = new SparkConf().setAppName("statisticalDensity").setMaster("local[*]")
     val context = new SparkContext(conf)
     context.setLogLevel("ERROR")
 
@@ -22,8 +25,8 @@ object StatisticalDensity{
     // 获取StatisticalDensity对象的StreamingContext
     val streamingContext: StreamingContext = statisticalDensity.streamingContext
 
-    // 调用StatisticalDensity对象的创建输出流方法
-    val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("39.107.46.146:2181", "TJP", "hhuc", 1)
+    // 调用StatisticalDensity对象的创建输出流方法                                                        //39.107.46.146
+    val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("39.107.46.146:2181", "TJP", "cluster", 1)
 //    val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("122.51.19.184:2181", "TJP", "initdata", 1)
 //    val stream: ReceiverInputDStream[(String, String)] = KafkaUtils.createStream(streamingContext, "192.168.2.121:2181", "TJPgroup", Map("initdata" -> 2))
 
@@ -49,6 +52,7 @@ class StatisticalDensity(context: SparkContext,interviewTime:Int) {
   // 通过context，指定间隔时间，创建StreamingContext环境
   val streamingContext = new StreamingContext(sparkContext, Seconds(interviewTime))
 
+  private val hashMap = new util.HashMap[String,Tuple1[(String,String)]]()
   /**
    * 创建receiverInputDStream输出流，用来读取kafka集群中的数据
    * @param zkQuorum 指定zookeeper路径
@@ -58,12 +62,12 @@ class StatisticalDensity(context: SparkContext,interviewTime:Int) {
    * @return 返回receiverInputDStream
    */
   def createStream(zkQuorum:String,groupId:String,topics:String,partition:Int) :ReceiverInputDStream[(String,String)] = {
-    println("start")
+    println("start create stream")
 
     // 调用KafkaUtils的createStream方法创建输出流
     val kafkaStream: ReceiverInputDStream[(String, String)] = KafkaUtils.createStream(streamingContext, zkQuorum, groupId, Map(topics -> partition))
 
-    println("end")
+    println("successfully create stream")
 
     return kafkaStream
   }
@@ -74,7 +78,6 @@ class StatisticalDensity(context: SparkContext,interviewTime:Int) {
    */
   def calculationDensity(kafkaStream:ReceiverInputDStream[(String,String)]) : Unit = {
     println("enter calculation")
-
     /**
      * 调用flatMap扁平化函数，将一行一行的信息切割成单个单词
      * 由于kafka消息是以key-value形式存储，而value才是我们要的信息
@@ -88,11 +91,13 @@ class StatisticalDensity(context: SparkContext,interviewTime:Int) {
 
     val lnglatTuple: DStream[Tuple1[(String, String)]] = kafkaStream.flatMap(line => {
       val words: Array[String] = line._2.split(" ")
+      KafkaProducerUtil.send(words(1),"expire")
       val tuple: Tuple1[(String, String)] = Tuple1(words(3), words(4))
+
       val array: Array[Tuple1[(String, String)]] = Array(tuple)
+
       array
     })
-
     val lnglatMap: DStream[(Tuple1[(String, String)], Int)] = lnglatTuple.map((_, 1))
 
     val resDStream: DStream[(Tuple1[(String, String)], Int)] = lnglatMap.reduceByKey(_+_)
@@ -106,7 +111,7 @@ class StatisticalDensity(context: SparkContext,interviewTime:Int) {
     resDStream.foreachRDD(tupleRDD => {
       tupleRDD.foreach(tuple => {
         res = tuple._1._1._1 + " " + tuple._1._1._2 + " " + tuple._2
-    //  println(res)
+      println(res)
 
         // 通过自定义kafkaProducerUtil工具类将统计结果发送到kafka消息队列中
         KafkaProducerUtil.send(res,"tjp")

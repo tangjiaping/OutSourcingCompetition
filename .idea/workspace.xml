@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd228757-90fa-4bb9-aa7a-17ca552ac3c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/resources/static/datas.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/bean/LngLat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/bean/user/Citizen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/controller/HeadMapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/controller/HeadMapController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/HeadMapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/HeadMapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/resources/static/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/resources/static/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/IHeadMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/IHeadMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/KafkaConsumerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/KafkaConsumerUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/WebSocketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/WebSocketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatisticalCalculation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StatisticalCalculation/src/main/scala/hhuc/cn/realtimecalculation/StatisticalDensity.scala" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/src/main/scala/hhuc/cn/realtimecalculation/StatisticalDensity.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticalCalculation/src/main/scala/hhuc/cn/senddatautil/KafkaProducerUtil.scala" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/src/main/scala/hhuc/cn/senddatautil/KafkaProducerUtil.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$3.class" afterDir="false" />
@@ -16,20 +19,6 @@
       <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$calculationDensity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$calculationDensity$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/senddatautil/KafkaProducerUtil$.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/senddatautil/KafkaProducerUtil$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initData/src/main/resources/core-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/initData/src/main/resources/core-site.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initData/src/main/resources/hive-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/initData/src/main/resources/hive-site.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initData/src/main/scala/hhuc/cn/loadData/MappingData.scala" beforeDir="false" afterPath="$PROJECT_DIR$/initData/src/main/scala/hhuc/cn/loadData/MappingData.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initData/src/main/scala/hhuc/cn/sentdata/SentDataToKafka.scala" beforeDir="false" afterPath="$PROJECT_DIR$/initData/src/main/scala/hhuc/cn/sentdata/SentDataToKafka.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initData/target/classes/core-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/initData/target/classes/core-site.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/loadData/MappingData$$anonfun$loadCurrentDatasFromHive$1$$anonfun$apply$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/loadData/MappingData$$anonfun$loadCurrentDatasFromHive$1$$anonfun$apply$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/loadData/MappingData$$anonfun$loadCurrentDatasFromHive$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/loadData/MappingData$$anonfun$loadCurrentDatasFromHive$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/loadData/MappingData$.class" beforeDir="false" afterPath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/loadData/MappingData$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/loadData/MappingData.class" beforeDir="false" afterPath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/loadData/MappingData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/sentdata/SentDataToKafka$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/sentdata/SentDataToKafka$$anon$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/sentdata/SentDataToKafka$.class" beforeDir="false" afterPath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/sentdata/SentDataToKafka$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/sentdata/SentDataToKafka.class" beforeDir="false" afterPath="$PROJECT_DIR$/initData/target/classes/hhuc/cn/sentdata/SentDataToKafka.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initData/target/classes/hive-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/initData/target/classes/hive-site.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +87,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Echarts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -120,6 +109,7 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="bean" />
       <recent name="cn.hhuc.bean" />
       <recent name="hhuc.cn.etl.stationdata.bean" />
     </key>
@@ -131,21 +121,7 @@
       <recent name="E:\javaweb\OutSourcingCompetition\ETL\src\main\java\hhuc\cn\etl\stationdata" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SentDataToKafka">
-    <configuration name="MappingData" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="hhuc.cn.loadData.MappingData" />
-      <module name="initData" />
-      <option name="VM_PARAMETERS" value="-Xms512m" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hhuc.cn.loadData.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.BackEndApplication">
     <configuration name="SentDataToKafka" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="hhuc.cn.sentdata.SentDataToKafka" />
       <module name="initData" />
@@ -174,6 +150,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WebSocketService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.hhuc.service.heatmap.WebSocketService" />
+      <module name="BackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.hhuc.service.heatmap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HeadMapService.monitorDensity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BackEnd" />
       <extension name="coverage">
@@ -190,17 +179,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WebSocketService.sendHeadMapData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.hhuc.controller.*" />
+          <option name="PATTERN" value="cn.hhuc.service.heatmap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="cn.hhuc.controller" />
-      <option name="MAIN_CLASS_NAME" value="cn.hhuc.controller.Test" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="PACKAGE_NAME" value="cn.hhuc.service.heatmap" />
+      <option name="MAIN_CLASS_NAME" value="cn.hhuc.service.heatmap.WebSocketService" />
+      <option name="METHOD_NAME" value="sendHeadMapData" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -214,20 +203,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.SentDataToKafka" />
       <item itemvalue="Application.StatisticalDensity" />
-      <item itemvalue="Application.MappingData" />
-      <item itemvalue="JUnit.HeadMapService.monitorDensity" />
-      <item itemvalue="JUnit.Test.test" />
+      <item itemvalue="Application.WebSocketService" />
+      <item itemvalue="Application.SentDataToKafka" />
+      <item itemvalue="JUnit.WebSocketService.sendHeadMapData" />
       <item itemvalue="Spring Boot.BackEndApplication" />
+      <item itemvalue="JUnit.HeadMapService.monitorDensity" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SentDataToKafka" />
-        <item itemvalue="Application.MappingData" />
-        <item itemvalue="Application.StatisticalDensity" />
         <item itemvalue="JUnit.HeadMapService.monitorDensity" />
-        <item itemvalue="JUnit.Test.test" />
+        <item itemvalue="Application.StatisticalDensity" />
+        <item itemvalue="Application.WebSocketService" />
+        <item itemvalue="JUnit.WebSocketService.sendHeadMapData" />
       </list>
     </recent_temporary>
   </component>
@@ -293,30 +282,45 @@
       <workItem from="1586698641235" duration="131000" />
       <workItem from="1587971345890" duration="16645000" />
       <workItem from="1588032947412" duration="923000" />
-      <workItem from="1588037088026" duration="5658000" />
+      <workItem from="1588037088026" duration="6151000" />
+      <workItem from="1588054877526" duration="47000" />
+      <workItem from="1588055888870" duration="1935000" />
+      <workItem from="1588138592374" duration="19406000" />
+      <workItem from="1588221588618" duration="19194000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="986" y="194" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1582521772160">
+    <state x="986" y="194" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1588142112681">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="986" y="194" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1582521772160" />
-    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587994907084">
+    <state x="986" y="194" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1588142112681" />
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588225309088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587994907084" />
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1588225309088" />
     <state x="519" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581661663793">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="519" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1581661663793" />
-    <state x="918" y="132" key="#com.intellij.ide.util.MemberChooser" timestamp="1586062237538">
+    <state x="918" y="132" key="#com.intellij.ide.util.MemberChooser" timestamp="1588230551385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="918" y="132" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1586062237538" />
+    <state x="918" y="132" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1588230551385" />
     <state x="389" y="91" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1582532188393">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -329,58 +333,58 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="275" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1586050750359" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585202790907">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588148667423">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585202790907" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1588148667423" />
     <state x="473" y="0" key="CommitChangelistDialog2" timestamp="1585207913848">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="473" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585207913848" />
-    <state x="730" y="169" key="FileChooserDialogImpl" timestamp="1588034907542">
+    <state x="730" y="169" key="FileChooserDialogImpl" timestamp="1588252649631">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="730" y="169" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588034907542" />
-    <state width="1493" height="406" key="GridCell.Tab.0.bottom" timestamp="1588042838241">
+    <state x="730" y="169" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588252649631" />
+    <state width="1493" height="471" key="GridCell.Tab.0.bottom" timestamp="1588257005021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="406" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588042838241" />
-    <state width="1493" height="406" key="GridCell.Tab.0.center" timestamp="1588042838241">
+    <state width="1493" height="471" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588257005021" />
+    <state width="1493" height="471" key="GridCell.Tab.0.center" timestamp="1588257005020">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="406" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588042838241" />
-    <state width="1493" height="406" key="GridCell.Tab.0.left" timestamp="1588042838241">
+    <state width="1493" height="471" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588257005020" />
+    <state width="1493" height="471" key="GridCell.Tab.0.left" timestamp="1588257005019">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="406" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588042838241" />
-    <state width="1493" height="406" key="GridCell.Tab.0.right" timestamp="1588042838241">
+    <state width="1493" height="471" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588257005019" />
+    <state width="1493" height="471" key="GridCell.Tab.0.right" timestamp="1588257005020">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="406" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588042838241" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588002855261">
+    <state width="1493" height="471" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588257005020" />
+    <state width="1493" height="471" key="GridCell.Tab.1.bottom" timestamp="1588257005021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588002855261" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1588002855261">
+    <state width="1493" height="471" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588257005021" />
+    <state width="1493" height="471" key="GridCell.Tab.1.center" timestamp="1588257005021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588002855261" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1588002855261">
+    <state width="1493" height="471" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588257005021" />
+    <state width="1493" height="471" key="GridCell.Tab.1.left" timestamp="1588257005021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588002855261" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1588002855261">
+    <state width="1493" height="471" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588257005021" />
+    <state width="1493" height="471" key="GridCell.Tab.1.right" timestamp="1588257005021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588002855261" />
-    <state x="99" y="0" key="SettingsEditor" timestamp="1586656633779">
+    <state width="1493" height="471" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588257005021" />
+    <state x="99" y="0" width="1176" height="824" key="SettingsEditor" timestamp="1588228135142">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="99" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586656633779" />
-    <state x="449" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1588032951339">
+    <state x="99" y="0" width="1176" height="824" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588228135142" />
+    <state x="449" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1588221655188">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588032951339" />
+    <state x="449" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588221655188" />
     <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586053818188">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -401,10 +405,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="557" y="204" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1581772000656" />
-    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585568158968">
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1588227934866">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585568158968" />
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1588227934866" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
