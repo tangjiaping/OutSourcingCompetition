@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd228757-90fa-4bb9-aa7a-17ca552ac3c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/bean/LngLat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/bean/user/Citizen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/config/CorlFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/controller/HeadMapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/controller/HeadMapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/HeadMapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/HeadMapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/IHeadMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/IHeadMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/KafkaConsumerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/KafkaConsumerUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/controller/StayVolumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/controller/StayVolumeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/WebSocketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/cn/hhuc/service/heatmap/WebSocketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticalCalculation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticalCalculation/src/main/scala/hhuc/cn/realtimecalculation/StatisticalDensity.scala" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/src/main/scala/hhuc/cn/realtimecalculation/StatisticalDensity.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$calculationDensity$1$$anonfun$apply$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$calculationDensity$1$$anonfun$apply$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$calculationDensity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$$anonfun$calculationDensity$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity.class" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticalCalculation/target/classes/hhuc/cn/realtimecalculation/StatisticalDensity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/resources/static/datas.json" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/resources/static/datas.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +75,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Echarts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BackEnd/src/main/resources/static" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -105,13 +93,13 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="cn.hhuc.service.crossRegion" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="bean" />
       <recent name="cn.hhuc.bean" />
       <recent name="hhuc.cn.etl.stationdata.bean" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\javaweb\OutSourcingCompetition\BackEnd\src\main\resources\static" />
@@ -121,7 +109,7 @@
       <recent name="E:\javaweb\OutSourcingCompetition\ETL\src\main\java\hhuc\cn\etl\stationdata" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackEndApplication">
+  <component name="RunManager" selected="Application.SentDataToKafka">
     <configuration name="SentDataToKafka" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="hhuc.cn.sentdata.SentDataToKafka" />
       <module name="initData" />
@@ -207,8 +195,8 @@
       <item itemvalue="Application.WebSocketService" />
       <item itemvalue="Application.SentDataToKafka" />
       <item itemvalue="JUnit.WebSocketService.sendHeadMapData" />
-      <item itemvalue="Spring Boot.BackEndApplication" />
       <item itemvalue="JUnit.HeadMapService.monitorDensity" />
+      <item itemvalue="Spring Boot.BackEndApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -286,7 +274,11 @@
       <workItem from="1588054877526" duration="47000" />
       <workItem from="1588055888870" duration="1935000" />
       <workItem from="1588138592374" duration="19406000" />
-      <workItem from="1588221588618" duration="19194000" />
+      <workItem from="1588221588618" duration="21633000" />
+      <workItem from="1588294542913" duration="1665000" />
+      <workItem from="1588309620613" duration="6108000" />
+      <workItem from="1588379105559" duration="2236000" />
+      <workItem from="1588492368276" duration="5243000" />
     </task>
     <servers />
   </component>
@@ -298,7 +290,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -317,10 +311,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="519" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1581661663793" />
-    <state x="918" y="132" key="#com.intellij.ide.util.MemberChooser" timestamp="1588230551385">
+    <state x="918" y="132" key="#com.intellij.ide.util.MemberChooser" timestamp="1588318070281">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="918" y="132" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1588230551385" />
+    <state x="918" y="132" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1588318070281" />
     <state x="389" y="91" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1582532188393">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -341,50 +335,50 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="473" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585207913848" />
-    <state x="730" y="169" key="FileChooserDialogImpl" timestamp="1588252649631">
+    <state x="730" y="169" key="FileChooserDialogImpl" timestamp="1588493243968">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="730" y="169" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588252649631" />
-    <state width="1493" height="471" key="GridCell.Tab.0.bottom" timestamp="1588257005021">
+    <state x="730" y="169" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588493243968" />
+    <state width="1493" height="292" key="GridCell.Tab.0.bottom" timestamp="1588516989404">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="471" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588257005021" />
-    <state width="1493" height="471" key="GridCell.Tab.0.center" timestamp="1588257005020">
+    <state width="1493" height="292" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588516989404" />
+    <state width="1493" height="292" key="GridCell.Tab.0.center" timestamp="1588516989404">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="471" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588257005020" />
-    <state width="1493" height="471" key="GridCell.Tab.0.left" timestamp="1588257005019">
+    <state width="1493" height="292" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588516989404" />
+    <state width="1493" height="292" key="GridCell.Tab.0.left" timestamp="1588516989404">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="471" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588257005019" />
-    <state width="1493" height="471" key="GridCell.Tab.0.right" timestamp="1588257005020">
+    <state width="1493" height="292" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588516989404" />
+    <state width="1493" height="292" key="GridCell.Tab.0.right" timestamp="1588516989404">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="471" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588257005020" />
-    <state width="1493" height="471" key="GridCell.Tab.1.bottom" timestamp="1588257005021">
+    <state width="1493" height="292" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588516989404" />
+    <state width="1493" height="292" key="GridCell.Tab.1.bottom" timestamp="1588322225324">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="471" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588257005021" />
-    <state width="1493" height="471" key="GridCell.Tab.1.center" timestamp="1588257005021">
+    <state width="1493" height="292" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588322225324" />
+    <state width="1493" height="292" key="GridCell.Tab.1.center" timestamp="1588322225324">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="471" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588257005021" />
-    <state width="1493" height="471" key="GridCell.Tab.1.left" timestamp="1588257005021">
+    <state width="1493" height="292" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588322225324" />
+    <state width="1493" height="292" key="GridCell.Tab.1.left" timestamp="1588322225324">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="471" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588257005021" />
-    <state width="1493" height="471" key="GridCell.Tab.1.right" timestamp="1588257005021">
+    <state width="1493" height="292" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588322225324" />
+    <state width="1493" height="292" key="GridCell.Tab.1.right" timestamp="1588322225324">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="471" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588257005021" />
+    <state width="1493" height="292" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588322225324" />
     <state x="99" y="0" width="1176" height="824" key="SettingsEditor" timestamp="1588228135142">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="99" y="0" width="1176" height="824" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588228135142" />
-    <state x="449" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1588221655188">
+    <state x="449" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1588492488283">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588221655188" />
+    <state x="449" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588492488283" />
     <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586053818188">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -1,6 +1,7 @@
 package cn.hhuc.controller;
 
 import cn.hhuc.bean.StayVolume;
+import cn.hhuc.config.CorlFilter;
 import cn.hhuc.service.stayVolume.StayVolumeService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ public class StayVolumeController {
 
     @Autowired
     private StayVolumeService volumeService;
+
 
     /**
      * 获得出现量的所有数据

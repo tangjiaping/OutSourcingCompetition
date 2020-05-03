@@ -56,7 +56,7 @@ public class WebSocketService {
             // 字符串拼接
             String res = "{" + "lng" + ":" + data.getLng() + "," +
                          "lat" + ":" + data.getLat() + "," +
-                         "value" + ":" + heatMapDatas.get(data) + "}";
+                         "count" + ":" + ((int)heatMapDatas.get(data) * 10) + "}";
             // 调用FastJson的方法将字符串转化为Json对象，其中Feature.OrderedField用来设置顺序不变
             objects.add(JSONObject.parseObject(res, Feature.OrderedField));
         }
