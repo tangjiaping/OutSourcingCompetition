@@ -1,4 +1,4 @@
-package cn.hhuc.controller;
+package cn.hhuc.controller.offline;
 
 import cn.hhuc.bean.CrossRegionVolume;
 import cn.hhuc.service.crossRegion.ICrossRegion;

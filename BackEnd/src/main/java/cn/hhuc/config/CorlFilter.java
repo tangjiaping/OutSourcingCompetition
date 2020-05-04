@@ -22,7 +22,7 @@ public class CorlFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpServletRequest request = (HttpServletRequest) servletRequest;
-        System.out.println(request.getRequestURL());
+//        System.out.println(request.getRequestURL());
         // 解决ajax访问跨域问题
         response.setHeader("Access-Control-Allow-Headers", "*");
 

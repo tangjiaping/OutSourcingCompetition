@@ -1,18 +1,10 @@
-package cn.hhuc.controller;
+package cn.hhuc.controller.heatmap;
 
-import cn.hhuc.service.heatmap.HeadMapService;
 import cn.hhuc.service.heatmap.WebSocketService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-
-import javax.websocket.*;
-import javax.websocket.server.PathParam;
-import javax.websocket.server.ServerEndpoint;
-import java.io.IOException;
 
 @Controller
 public class HeadMapController {
@@ -25,8 +17,8 @@ public class HeadMapController {
     /**
      * 每个5s向前端推送一个信息
      */
-    @Scheduled(fixedRate = 5000)
-    public void sendHeadMapDataToFront(){
-        webSocketService.sendHeadMapData("map","/heatmap");
-    }
+//    @Scheduled(fixedRate = 5000)
+//    public void sendHeadMapDataToFront(){
+//        webSocketService.sendHeadMapData("map","/heatmap");
+//    }
 }

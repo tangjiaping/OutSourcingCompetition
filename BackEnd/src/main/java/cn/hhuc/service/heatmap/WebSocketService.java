@@ -1,20 +1,15 @@
 package cn.hhuc.service.heatmap;
 
-import cn.hhuc.bean.HeatMapData;
 import cn.hhuc.bean.LngLat;
-import cn.hhuc.controller.HeadMapController;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
 import org.apache.log4j.Logger;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.ReentrantLock;
 
 
 @Service

@@ -2,8 +2,6 @@ package cn.hhuc.service.heatmap;
 
 import cn.hhuc.bean.HeatMapData;
 import cn.hhuc.bean.LngLat;
-import cn.hhuc.bean.user.Citizen;
-import jdk.nashorn.internal.ir.CallNode;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.log4j.Logger;
@@ -11,7 +9,6 @@ import org.junit.Test;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
 public class HeadMapService implements IHeadMap {

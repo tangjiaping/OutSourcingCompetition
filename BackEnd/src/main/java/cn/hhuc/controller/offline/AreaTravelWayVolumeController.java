@@ -1,4 +1,4 @@
-package cn.hhuc.controller;
+package cn.hhuc.controller.offline;
 
 import cn.hhuc.bean.AreaTravelWayVolume;
 import cn.hhuc.mapper.IAreaTravelWayVolumeMapper;

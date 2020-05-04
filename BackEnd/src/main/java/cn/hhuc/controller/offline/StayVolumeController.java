@@ -1,7 +1,6 @@
-package cn.hhuc.controller;
+package cn.hhuc.controller.offline;
 
 import cn.hhuc.bean.StayVolume;
-import cn.hhuc.config.CorlFilter;
 import cn.hhuc.service.stayVolume.StayVolumeService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

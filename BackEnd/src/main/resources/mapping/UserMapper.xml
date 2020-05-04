@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hhuc.mapper.IUser">
+   <select id="queryUserByName" parameterType="java.lang.String" resultType="cn.hhuc.bean.user.User">
+       select username,password from `user` where username = #{username};
+   </select>
+
+    <insert id="insertUser" parameterType="cn.hhuc.bean.user.User">
+       insert into `user` (username,password,phone) values (#{username},#{password},#{phone});
+   </insert>
+
+    <select id="queryUserByPhone" parameterType="java.lang.String" resultType="java.lang.String">
+       select username from `user` where phone = #{phone};
+   </select>
+
+</mapper>
