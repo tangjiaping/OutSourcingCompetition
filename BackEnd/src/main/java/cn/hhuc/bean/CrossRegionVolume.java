@@ -3,15 +3,15 @@ package cn.hhuc.bean;
 public class CrossRegionVolume {
     private String startArea;
     private String endArea;
-    private int volume;
+    private int value;
 
     public CrossRegionVolume() {
     }
 
-    public CrossRegionVolume(String startArea, String endArea, int volume) {
+    public CrossRegionVolume(String startArea, String endArea, int value) {
         this.startArea = startArea;
         this.endArea = endArea;
-        this.volume = volume;
+        this.value = value;
     }
 
     public String getStartArea() {
@@ -30,16 +30,16 @@ public class CrossRegionVolume {
         this.endArea = endArea;
     }
 
-    public int getVolume() {
-        return volume;
+    public int getValue() {
+        return value;
     }
 
-    public void setVolume(int volume) {
-        this.volume = volume;
+    public void setValue(int value) {
+        this.value = value;
     }
 
     @Override
     public String toString() {
-        return "CrossRegionVolume{" + "startArea='" + startArea + '\'' + ", endArea='" + endArea + '\'' + ", volume=" + volume + '}';
+        return "CrossRegionvalue{" + "startArea='" + startArea + '\'' + ", endArea='" + endArea + '\'' + ", value=" + value + '}';
     }
 }

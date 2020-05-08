@@ -12,7 +12,7 @@ import java.io.IOException;
 
 @WebFilter
 @Component
-public class CorlFilter implements Filter {
+public class CorlFilter implements Filter{
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 

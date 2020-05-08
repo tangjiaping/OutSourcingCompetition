@@ -26,7 +26,10 @@ object StatisticalDensity{
     val streamingContext: StreamingContext = statisticalDensity.streamingContext
 
     // 调用StatisticalDensity对象的创建输出流方法                                                        //39.107.46.146
+//    val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("39.107.46.146:2181", "TJP", "mockdata2", 1)
     val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("39.107.46.146:2181", "TJP", "cluster", 1)
+
+
 //    val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("122.51.19.184:2181", "TJP", "initdata", 1)
 //    val stream: ReceiverInputDStream[(String, String)] = KafkaUtils.createStream(streamingContext, "192.168.2.121:2181", "TJPgroup", Map("initdata" -> 2))
 
@@ -115,6 +118,7 @@ class StatisticalDensity(context: SparkContext,interviewTime:Int) {
 
         // 通过自定义kafkaProducerUtil工具类将统计结果发送到kafka消息队列中
         KafkaProducerUtil.send(res,"tjp")
+//        KafkaProducerUtil.send(res,"mockdata")
       })
     })
   }

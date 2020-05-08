@@ -25,7 +25,7 @@ public class KafkaProducer {
     public Properties init(){
         properties = new Properties();
         // kafka集群ip:port
-        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"192.168.2.121:9092");
+        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"39.107.46.146:9092");
         // 设置重连接次数
         properties.put(ProducerConfig.RETRIES_CONFIG,1);
         properties.put(ProducerConfig.ACKS_CONFIG,"all");
@@ -60,7 +60,7 @@ public class KafkaProducer {
                         int dataNum = (int)(Math.random() * 100);
                         while (dataNum-- > 0){
                             // 将模拟的时间、模拟的用户、模拟的经纬度组成生产者消息
-                            String data = MockTime.mockTime() + " " + MockUser.mockUser() + " " + MockLngLat.mockLngLat();
+                            String data = MockTime.mockTime() + " " + MockUser.mockUser() + " " + "null" + " " + MockLngLat.mockLngLat();
                             // 将生产的消息封装成ProducerRecord对象，并向指定topic发送
                             ProducerRecord<String, String> record = new ProducerRecord<>(topic, data);
                             kafkaProducer.send(record);
@@ -85,8 +85,8 @@ public class KafkaProducer {
     public static void main(String[] args) throws InterruptedException {
         KafkaProducer producer = new KafkaProducer();
         Properties prop = producer.init();
-        producer.start(prop,"mockdata");
-        Thread.sleep(2000);
+        producer.start(prop,"mockdata2");
+        Thread.sleep(200000);
         producer.stop();
 
     }
