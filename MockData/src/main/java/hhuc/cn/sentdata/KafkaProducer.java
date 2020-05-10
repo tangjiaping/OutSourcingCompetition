@@ -11,11 +11,12 @@ import java.util.Properties;
 
 public class KafkaProducer {
     // isStart用来判断模拟数据线程是否结束
-    private Boolean isStart = false;
+    private volatile Boolean isStart = false;
     // kafka生产者
     private org.apache.kafka.clients.producer.KafkaProducer<String,String> kafkaProducer;
     // kafka配置文件
     private Properties properties;
+
 
     /**
      * 初始化函数
@@ -57,17 +58,17 @@ public class KafkaProducer {
             while (isStart){
                 try {
                         // 设置每秒的消息随机量
-                        int dataNum = (int)(Math.random() * 100);
+                        int dataNum = (int)(Math.random() * 150);
                         while (dataNum-- > 0){
                             // 将模拟的时间、模拟的用户、模拟的经纬度组成生产者消息
-                            String data = MockTime.mockTime() + " " + MockUser.mockUser() + " " + "null" + " " + MockLngLat.mockLngLat();
+                            String data = MockTime.mockTime() + " " + MockUser.mockUser() + " " + "null" + " " + MockLngLat.mockHotPlaceLngLat();
                             // 将生产的消息封装成ProducerRecord对象，并向指定topic发送
                             ProducerRecord<String, String> record = new ProducerRecord<>(topic, data);
                             kafkaProducer.send(record);
                             System.out.println(data + "---------->发送成功");
                     }
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
+                        Thread.sleep(1000);
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -82,12 +83,10 @@ public class KafkaProducer {
         kafkaProducer.close();
     }
 
+    // 模拟数据
     public static void main(String[] args) throws InterruptedException {
         KafkaProducer producer = new KafkaProducer();
         Properties prop = producer.init();
         producer.start(prop,"mockdata2");
-        Thread.sleep(200000);
-        producer.stop();
-
     }
 }

@@ -15,7 +15,8 @@ public class UserServiceImpl implements IUserService {
     @Override
     public User queryUserByName(String username,String password) {
         User user = userMapper.queryUserByName(username);
-        if (password != null && password.equals(user.getPassword())){
+        System.out.println(user);
+        if (user != null && password != null && user.getPassword() != null){
             return user;
         }
         return null;
@@ -27,11 +28,16 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public String queryUserByPhone(String phone) {
-        String username = userMapper.queryUserByPhone(phone);
-        if (null != username){
+    public boolean isAccess(String phone) {
+        User user = queryUserByPhone(phone);
+        if (user != null)
+            return true;
+        return false;
+    }
 
-        }
-        return null;
+    @Override
+    public User queryUserByPhone(String phone) {
+        User user = userMapper.queryUserByPhone(phone);
+        return user;
     }
 }

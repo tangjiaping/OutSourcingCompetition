@@ -9,8 +9,8 @@
        insert into `user` (username,password,phone) values (#{username},#{password},#{phone});
    </insert>
 
-    <select id="queryUserByPhone" parameterType="java.lang.String" resultType="java.lang.String">
-       select username from `user` where phone = #{phone};
+    <select id="queryUserByPhone" parameterType="java.lang.String" resultType="cn.hhuc.bean.user.User">
+       select username,password,phone from `user` where phone = #{phone};
    </select>
 
 </mapper>

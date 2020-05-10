@@ -11,11 +11,11 @@ import java.util.Properties;
  */
 public class KafkaConsumerUtil {
 
-    public static KafkaConsumer getKafkaConsumer(String server,String topic){
+    public static KafkaConsumer getKafkaConsumer(String server,String topic,String group){
         Properties properties = new Properties();
         properties.put("bootstrap.servers",server);
 //        properties.put("group.id","tencent");
-        properties.put("group.id","local");
+        properties.put("group.id",group);
         properties.put("auto.offset.reset","latest");
         properties.put("auto.commit.interval.ms","1000");
         properties.put("session.timeout.ms","30000");

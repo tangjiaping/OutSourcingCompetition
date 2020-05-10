@@ -10,7 +10,16 @@ import org.apache.spark.streaming.kafka.KafkaUtils
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.{SparkConf, SparkContext}
 
-
+/**
+ * 模拟数据接收 topic = mockdata2
+ * 模拟数据发送 topic = mockdata
+ *
+ * 真实数据接收 topic = cluster
+ * 真实数据发送 topic = tjp
+ *
+ * args(0) 接收的topic
+ * args(1) 发送的topic
+ */
 
 object StatisticalDensity{
   def main(args: Array[String]): Unit = {
@@ -26,15 +35,14 @@ object StatisticalDensity{
     val streamingContext: StreamingContext = statisticalDensity.streamingContext
 
     // 调用StatisticalDensity对象的创建输出流方法                                                        //39.107.46.146
+    val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("39.107.46.146:2181", "TJP", args(0), 1)
+
 //    val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("39.107.46.146:2181", "TJP", "mockdata2", 1)
-    val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("39.107.46.146:2181", "TJP", "cluster", 1)
+//    val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("39.107.46.146:2181", "TJP", "cluster", 1)
 
-
-//    val stream: ReceiverInputDStream[(String, String)] = statisticalDensity.createStream("122.51.19.184:2181", "TJP", "initdata", 1)
-//    val stream: ReceiverInputDStream[(String, String)] = KafkaUtils.createStream(streamingContext, "192.168.2.121:2181", "TJPgroup", Map("initdata" -> 2))
 
     // 实时计算
-    statisticalDensity.calculationDensity(stream)
+    statisticalDensity.calculationDensity(stream,args(1))
 
     // 开启
     streamingContext.start()
@@ -79,7 +87,7 @@ class StatisticalDensity(context: SparkContext,interviewTime:Int) {
    * 用来实时计算人群密度并将计算结果发送到kafka消息队列
    * @param kafkaStream kafka输出流
    */
-  def calculationDensity(kafkaStream:ReceiverInputDStream[(String,String)]) : Unit = {
+  def calculationDensity(kafkaStream:ReceiverInputDStream[(String,String)],topic: String) : Unit = {
     println("enter calculation")
     /**
      * 调用flatMap扁平化函数，将一行一行的信息切割成单个单词
@@ -117,8 +125,9 @@ class StatisticalDensity(context: SparkContext,interviewTime:Int) {
       println(res)
 
         // 通过自定义kafkaProducerUtil工具类将统计结果发送到kafka消息队列中
-        KafkaProducerUtil.send(res,"tjp")
+//        KafkaProducerUtil.send(res,"tjp")
 //        KafkaProducerUtil.send(res,"mockdata")
+        KafkaProducerUtil.send(res,topic)
       })
     })
   }

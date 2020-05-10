@@ -11,6 +11,6 @@ public interface IUser {
 
     public void insertUser(User user);
 
-    public String queryUserByPhone(String phone);
+    public User queryUserByPhone(String phone);
 
 }

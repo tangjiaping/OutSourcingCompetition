@@ -45,7 +45,19 @@ public class MockLngLat {
         centerCityLngLat.add("123.655555" + " " + "42.80167847");
         centerCityLngLat.add("123.655555" + " " + "41.38805847");
     }
+    private static List hotPlace = new ArrayList<String>();
 
+    static {
+        hotPlace.add("123.364051" + " " + "41.786589");
+        hotPlace.add("123.431301" + " " + "41.807985");
+        hotPlace.add("123.46221" + " " + "41.803282");
+        hotPlace.add("123.468114" + " " + "41.807626");
+        hotPlace.add("122.889617" + " " + "41.765946");
+        hotPlace.add("123.728897" + " " + "42.028802");
+        hotPlace.add("123.647283" + " " + "42.067571");
+        hotPlace.add("122.83792" + " " + "42.000161");
+        hotPlace.add("122.737988" + " " + "41.518242");
+    }
     /**
      * 模拟经纬度数据函数
      * @return
@@ -74,10 +86,16 @@ public class MockLngLat {
         String newLngLat = df.format((Double.parseDouble(centerLng) + lngOffset)) + " " + df.format((Double.parseDouble(centerLat) + latOffset));
         return newLngLat;
     }
+    public static String mockHotPlaceLngLat(){
+        int randomNum = (int)(Math.random() * (hotPlace.size()-1));
+//        return (String) hotPlace.get(randomNum);
+        return (String) hotPlace.get(1);
+    }
 
     public static void main(String[] args) {
         while (true){
-            System.out.println(mockLngLat());
+            //System.out.println(mockLngLat());
+            System.out.println(mockHotPlaceLngLat());
         }
     }
 }

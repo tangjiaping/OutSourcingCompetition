@@ -36,7 +36,7 @@ public class HeadMapService implements IHeadMap {
     @Test
     public void monitorDensity() {
         log.info("enter monitorDensity");
-        KafkaConsumer kafkaConsumer = KafkaConsumerUtil.getKafkaConsumer("122.51.19.184:9092", "tjp");
+        KafkaConsumer kafkaConsumer = KafkaConsumerUtil.getKafkaConsumer("122.51.19.184:9092", "tjp","heatmap");
         DataFromCluster cluster = new DataFromCluster();
         /**
          * 数据切分和封装
@@ -75,7 +75,7 @@ public class HeadMapService implements IHeadMap {
     @Override
     public void deleteExpireData() {
         System.out.println("======================start clear expire data===========================");
-        KafkaConsumer kafkaConsumerExpire = KafkaConsumerUtil.getKafkaConsumer("122.51.19.184:9092", "expire");
+        KafkaConsumer kafkaConsumerExpire = KafkaConsumerUtil.getKafkaConsumer("122.51.19.184:9092", "expire","dataInvaid");
         DataFromCluster cluster = new DataFromCluster();
 
         Iterator iterator = cluster.getFromKafka(kafkaConsumerExpire);

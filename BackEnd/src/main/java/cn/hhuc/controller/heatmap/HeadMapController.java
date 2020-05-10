@@ -17,8 +17,8 @@ public class HeadMapController {
     /**
      * 每个5s向前端推送一个信息
      */
-//    @Scheduled(fixedRate = 5000)
-//    public void sendHeadMapDataToFront(){
-//        webSocketService.sendHeadMapData("map","/heatmap");
-//    }
+    @Scheduled(fixedRate = 5000)
+    public void sendHeadMapDataToFront(){
+        webSocketService.sendHeadMapData("map","/heatmap");
+    }
 }
