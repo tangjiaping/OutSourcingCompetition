@@ -41,7 +41,7 @@ object MappingData {
  */
 class MappingData(database:String = "cleardata"){
   // 创建sparkSQL环境
-  private val sparkSession: SparkSession = SparkSession.builder()
+   private val sparkSession: SparkSession = SparkSession.builder()
     .master("local[1]")
     .appName("mappingData")
     .config("hive.metastore.uris", "thrift://47.103.136.112:9083") // 设置hive元数据的路径

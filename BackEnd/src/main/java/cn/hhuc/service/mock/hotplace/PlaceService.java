@@ -20,7 +20,6 @@ public class PlaceService {
 
     // m默认有一个热点位置
     public PlaceService(){
-        placeNames.add("八一公园");
     }
 
     // 根据热点位置名字查找存储在数据库中的信息
@@ -36,6 +35,7 @@ public class PlaceService {
     public void addPlaces(Object[] objects){
         // 原先的数据清除
         placeNames.clear();
+        list.clear();
         for (Object o : objects){
             // 判断是否存在，存在的无需再次添加
             if (!placeNames.contains(o)){

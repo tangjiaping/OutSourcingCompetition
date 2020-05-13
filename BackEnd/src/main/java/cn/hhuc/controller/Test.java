@@ -2,26 +2,21 @@ package cn.hhuc.controller;
 
 import cn.hhuc.bean.StayVolume;
 import cn.hhuc.mapper.IStayVolume;
-import org.java_websocket.client.WebSocketClient;
-import org.java_websocket.drafts.Draft_6455;
-import org.java_websocket.handshake.ServerHandshake;
+import cn.hhuc.mapper.MonitorMapper;
+import cn.hhuc.service.placemonitor.VideoMonitor;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.socket.WebSocketSession;
 
-import javax.websocket.OnClose;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.server.ServerEndpoint;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.HashMap;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.*;
 import java.util.List;
 import java.util.Objects;
 
@@ -61,6 +56,26 @@ public class Test {
     public String sendAllUser(String message) {
         // 也可以采用template方式
         return "定时任务";
+    }
+
+    @Autowired
+    public VideoMonitor monitor;
+    //@RequestMapping("/getvideo")
+    public void getVideo(HttpServletRequest request, HttpServletResponse response){
+        try {
+//            URL url = new URL("http://localhost:8080/video/viedo-03.mp4");
+//            URLConnection connection = url.openConnection();
+//            InputStream inputStream = connection.getInputStream();
+            InputStream inputStream = monitor.getInputStream("八一公园");
+            response.setHeader("Content-Type","video/mp4;charset=utf-8");
+            IOUtils.copy(inputStream,response.getOutputStream());
+            response.flushBuffer();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     class User{

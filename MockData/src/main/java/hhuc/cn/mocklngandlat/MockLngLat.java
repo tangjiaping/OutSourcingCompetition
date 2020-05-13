@@ -88,8 +88,8 @@ public class MockLngLat {
     }
     public static String mockHotPlaceLngLat(){
         int randomNum = (int)(Math.random() * (hotPlace.size()-1));
-//        return (String) hotPlace.get(randomNum);
-        return (String) hotPlace.get(1);
+        return (String) hotPlace.get(randomNum);
+//        return (String) hotPlace.get(1);
     }
 
     public static void main(String[] args) {

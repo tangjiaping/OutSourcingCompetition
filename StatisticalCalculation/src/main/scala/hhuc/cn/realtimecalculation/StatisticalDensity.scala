@@ -23,7 +23,11 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 object StatisticalDensity{
   def main(args: Array[String]): Unit = {
-    val conf: SparkConf = new SparkConf().setAppName("statisticalDensity").setMaster("local[*]")
+    val conf: SparkConf = new SparkConf()
+      .setAppName("statisticalDensity")
+      .setMaster("local[*]")   // spark://47.103.136.112:7077     local[*]
+
+
     val context = new SparkContext(conf)
     context.setLogLevel("ERROR")
 
@@ -63,7 +67,7 @@ class StatisticalDensity(context: SparkContext,interviewTime:Int) {
   // 通过context，指定间隔时间，创建StreamingContext环境
   val streamingContext = new StreamingContext(sparkContext, Seconds(interviewTime))
 
-  private val hashMap = new util.HashMap[String,Tuple1[(String,String)]]()
+ // private val hashMap = new util.HashMap[String,Tuple1[(String,String)]]()
   /**
    * 创建receiverInputDStream输出流，用来读取kafka集群中的数据
    * @param zkQuorum 指定zookeeper路径

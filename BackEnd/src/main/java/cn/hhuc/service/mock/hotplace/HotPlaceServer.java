@@ -50,5 +50,5 @@ public class HotPlaceServer {
     public void sendHotPlace(String user, String destination){
         monitorHotPlace(user,destination);
     }
-    
+
 }
