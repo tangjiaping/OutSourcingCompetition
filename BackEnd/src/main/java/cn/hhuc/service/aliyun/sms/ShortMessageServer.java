@@ -17,7 +17,7 @@ import com.aliyuncs.profile.DefaultProfile;
 public class ShortMessageServer {
 
     public String sendVerifyCode(String phoneNum,int code) {
-        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI4GEJuZUs2nC1A5bAdG6c", "bXZj6alr9Dh57lNgvXGAruC1hkOIBu");
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "your aliyun AccessKey", "your aliyun secret");
         IAcsClient client = new DefaultAcsClient(profile);
         CommonRequest request = new CommonRequest();
         request.setMethod(MethodType.POST);
